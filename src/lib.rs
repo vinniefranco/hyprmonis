@@ -23,10 +23,6 @@ impl Config {
     }
 }
 
-pub fn handle_event(event: String) {
-    println!("{event}");
-}
-
 fn hypr_socket_command(command: &str, socket: &String) -> std::io::Result<String> {
     let mut socket: UnixStream = UnixStream::connect(socket)?;
     socket.write_all(command.as_bytes())?;
